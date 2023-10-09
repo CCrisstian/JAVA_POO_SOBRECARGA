@@ -2,7 +2,12 @@ package Org.CristaldoCristian.POOSobrecarga;
 
 public class Calculadora {
 
-/*
+/*Forzando a que no se instancie la clase Calculadora - Constructor private*/
+
+    private Calculadora() {
+    }
+
+    /*
  __________________________________________________________
 |                                                          |
 La "sobrecarga" en Java se refiere a la capacidad de       |
@@ -16,22 +21,22 @@ La "sobrecarga" en Java se refiere a la capacidad de       |
 //====================SOBRECARGA-SUMA====================//
 
     /*------------2 PARÁMETROS------------*/
-    public int sumar(int a, int b){
+    public static int sumar(int a, int b){
         return a + b;
     }
-    public float sumar(float a, float b){
+    public static float sumar(float a, float b){
         return a + b;
     }
-    public float sumar(int a, float b){
+    public static float sumar(int a, float b){
         return a + b;
     }
-    public float sumar(float a, int b){
+    public static float sumar(float a, int b){
         return a + b;
     }
-    public double sumar(double a, double b){
+    public static double sumar(double a, double b){
         return a + b;
     }
-    public int sumar(String a, String b){
+    public static int sumar(String a, String b){
         int resultado;
         try {
             resultado = Integer.parseInt(a) + Integer.parseInt(b);
@@ -40,15 +45,47 @@ La "sobrecarga" en Java se refiere a la capacidad de       |
         }
         return resultado;
     }
+    public static long sumar(long a, long b){
+        return a + b;
+    }
     /*------------2 PARÁMETROS------------*/
 
     /*------------3 PARÁMETROS------------*/
-    public int sumar (int a, int b, int c){
+    public static int sumar (int a, int b, int c){
         return a + b + c;
     }
     /*------------3 PARÁMETROS------------*/
 
-
+    /*------------N PARÁMETROS------------*/
+    public static int sumar(int... n){
+        int total = 0;
+        for (int i: n) {
+            total += i;
+        }
+        return total;
+    }
+    public static float sumar(float... n){
+        float total = 0;
+        for (float i: n) {
+            total += i;
+        }
+        return total;
+    }
+    public static float sumar(float a, int...n){
+        float total = 0;
+        for (int i: n) {
+            total += i;
+        }
+        return total;
+    }
+    public static double sumar(double...n){
+        double total = 0D;
+        for (double i: n) {
+            total += i;
+        }
+        return total;
+    }
+    /*------------N PARÁMETROS------------*/
 
 //====================SOBRECARGA-SUMA====================//
 }
